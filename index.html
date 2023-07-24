@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Template</title>
+  </head>
+  <body>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      section {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+      [popover] {
+        max-width: 60ch;
+      }
+    </style>
+    <section>
+      <div>
+        <h3>In de oven</h3>
+        <button popovertarget="pompoen-snijden">Hoe flespompoen snijden</button>
+        <p id="pompoen-snijden" popover>
+          Snij de flespompoen in kleine stukje. Flespompoen is lastig te
+          snijden, snij die eerst in grote stukken en ga daarna door om het in
+          kleine blokje van een half finger kootje te snijden. Schillen hoeft
+          niet.
+        </p>
+        <ul>
+          <li>
+            Flespompoen
+            <ul>
+              <li>Chili vlokken</li>
+              <li>Kurkumma</li>
+              <li>Komijn</li>
+              <li>Olie</li>
+              <li>Kaneel (als je haar voelt)</li>
+              <li>30 min 180 graden</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h3>In de pan</h3>
+        <ul>
+          <li>
+            2 uien (normaal) zoet bakken
+            <button popovertarget="zoete-uien">Hoe zoet bakken?</button>
+          </li>
+          <div id="zoete-uien" popover>
+            Uien bak je zoet door ze op hoogvuur bij elkaar te houden. Hierdoor
+            stomen ze zichzelf gaar en krijgen ze een zoete smaak. Ze zijn klaar
+            wanneer ze een bruine kleur hebben.
+          </div>
+          <li>
+            Knoflook
+            <ul>
+              <li>Komijn</li>
+              <li>Kurkuma</li>
+              <li>Paprika poeder</li>
+            </ul>
+          </li>
+          <li>Gember (verse)</li>
+          <li>2 blikken gepelde tomaten</li>
+          <li>1 blik kikkererten</li>
+          <li>Groene linzen bijvoegen (todo: eige sectie geven)</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Op het laatst</h3>
+        <ul>
+          <li>Koriander</li>
+          <li>Yoghurt</li>
+          <li>Mango chutney</li>
+        </ul>
+      </div>
+    </section>
+  </body>
+</html>
