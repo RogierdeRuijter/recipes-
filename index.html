@@ -29,13 +29,14 @@
         }
         h1,
         h2,
-        h3 {
+        h3,
+        h4 {
           font-weight: 400;
         }
       }
       section > article {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         padding-inline-start: 1rem;
       }
       [popover] {
@@ -172,7 +173,64 @@
           sluit
         </button>
       </div>
-      <article></article>
+      <article>
+        <div>
+          <h3>Keuken benodigdheden</h3>
+          <ul>
+            <li>Koekenpan</li>
+            <li>Deksel voor op de koekenpan</li>
+            <li>Snijplank</li>
+            <li>Beetje scherp mes</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Voorbereiding</h3>
+          <ul>
+            <li>1 klein uitje, fijn snijden</li>
+            <li>1 teen knoflook, fijn snijden</li>
+            <li>1cm blokje kember, fijn snijden</li>
+            <li>1 glas rijst (ongeveer 200g)</li>
+            <li>1.5 glas boulion</li>
+          </ul>
+        </div>
+        <div>
+          <h3>In de koekenpan</h3>
+          <ol>
+            <!-- voeg bij olie een sterretje toe met welke olie, olijf of kokos-->
+            <li>1 eetlepel boter en 1 eetlepel olie</li>
+            <li>Laat dit warm worden</li>
+            <li>
+              Voeg toe
+              <ul>
+                <li>ui</li>
+                <li>knoflook</li>
+                <li>gember</li>
+              </ul>
+            </li>
+            <li>Bakken tot het er doorzichteriger uitziet dan eerst</li>
+            <li>
+              Voeg toe
+              <ul>
+                <li>rijst</li>
+                <li>2 theelepels kurkuma</li>
+              </ul>
+            </li>
+            <li>Roer alles door elkaar heen</li>
+            <li>
+              Voeg toe
+              <ul>
+                <li>boulion</li>
+                <li>1 laurierblad</li>
+                <li>1/4 theelepel tijm</li>
+                <li>1/4 theelepel zout</li>
+                <li>Piecie peper</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+        <h4>Laat dit 17 minuten koken met een deksel er op</h4>
+        <h4>Als het klaar is gelijk serveren</h4>
+      </article>
     </section>
   </body>
 </html>
