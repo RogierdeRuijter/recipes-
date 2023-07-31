@@ -4,79 +4,161 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Template</title>
+    <link rel="stylesheet" href="popover-api-fallback.css" />
+    <script src="popover-api-fallback.js" defer></script>
+    <title>Recepten</title>
   </head>
   <body>
     <style>
       * {
         box-sizing: border-box;
       }
-      section {
+      html {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        --hue: 160;
+        background-color: oklch(0.9 0.02 var(--hue));
+        color-scheme: light dark;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        html {
+          background-color: oklch(0.15 0.1 var(--hue));
+          color: oklch(0.9 0.05 var(--hue));
+        }
+        h1,
+        h2,
+        h3 {
+          font-weight: 400;
+        }
+      }
+      section > article {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
+        padding-inline-start: 1rem;
       }
       [popover] {
         max-width: 60ch;
       }
     </style>
+    <h1>Recepten</h1>
     <section>
-      <div>
-        <h3>In de oven</h3>
-        <button popovertarget="pompoen-snijden">Hoe flespompoen snijden</button>
-        <p id="pompoen-snijden" popover>
-          Snij de flespompoen in kleine stukje. Flespompoen is lastig te
-          snijden, snij die eerst in grote stukken en ga daarna door om het in
-          kleine blokje van een half finger kootje te snijden. Schillen hoeft
-          niet.
-        </p>
-        <ul>
-          <li>
-            Flespompoen
-            <ul>
-              <li>Chili vlokken</li>
-              <li>Kurkumma</li>
-              <li>Komijn</li>
-              <li>Olie</li>
-              <li>Kaneel (als je haar voelt)</li>
-              <li>30 min 180 graden</li>
-            </ul>
-          </li>
-        </ul>
+      <h2>Fles pompoen curry</h2>
+      <button popovertarget="boodschap-pompoen" popovertargetaction="toggle">
+        Boodschappenlijstje
+      </button>
+      <div id="boodschap-pompoen" popover>
+        <form><input type="checkbox" />2 uien</form>
+        <form><input type="checkbox" />2 uien</form>
+        <form><input type="checkbox" />1kg flespompoen</form>
+        <form><input type="checkbox" />1 blik kikkererten</form>
+        <h4>Kruiden</h4>
+        <form><input type="checkbox" />Chili vlokken</form>
+        <form><input type="checkbox" />Kurkuma</form>
+        <form><input type="checkbox" />Komijn</form>
+        <form><input type="checkbox" />Kaneel</form>
+        <form><input type="checkbox" />Paprika poeder</form>
+        <button popovertarget="boodschap-pompoen" popovertargetaction="hide">
+          sluit
+        </button>
       </div>
-      <div>
-        <h3>In de pan</h3>
-        <ul>
-          <li>
-            2 uien (normaal) zoet bakken
-            <button popovertarget="zoete-uien">Hoe zoet bakken?</button>
-          </li>
-          <div id="zoete-uien" popover>
-            Uien bak je zoet door ze op hoogvuur bij elkaar te houden. Hierdoor
-            stomen ze zichzelf gaar en krijgen ze een zoete smaak. Ze zijn klaar
-            wanneer ze een bruine kleur hebben.
-          </div>
-          <li>
-            Knoflook
-            <ul>
-              <li>Komijn</li>
-              <li>Kurkuma</li>
-              <li>Paprika poeder</li>
-            </ul>
-          </li>
-          <li>Gember (verse)</li>
-          <li>2 blikken gepelde tomaten</li>
-          <li>1 blik kikkererten</li>
-          <li>Groene linzen bijvoegen (todo: eige sectie geven)</li>
-        </ul>
+      <article>
+        <div>
+          <h3>In de oven</h3>
+          <button popovertarget="pompoen-snijden" popovertargetaction="toggle">
+            Hoe flespompoen snijden
+          </button>
+          <p id="pompoen-snijden" popover>
+            Snij de flespompoen in kleine stukje. Flespompoen is lastig te
+            snijden, snij die eerst in grote stukken en ga daarna door om het in
+            kleine blokje van een half finger kootje te snijden. Schillen hoeft
+            niet.
+            <button popovertarget="pompoen-snijden" popovertargetaction="hide">
+              sluit
+            </button>
+          </p>
+          <ul>
+            <li>
+              Flespompoen
+              <ul>
+                <li>Chili vlokken</li>
+                <li>Kurkumma</li>
+                <li>Komijn</li>
+                <li>Olie</li>
+                <li>Kaneel (als je haar voelt)</li>
+                <li>30 min 180 graden</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3>In de pan</h3>
+          <ul>
+            <li>
+              2 uien (normaal) zoet bakken
+              <button popovertarget="zoete-uien" popovertargetaction="toggle">
+                Hoe zoet bakken?
+              </button>
+            </li>
+            <div id="zoete-uien" popover>
+              Uien bak je zoet door ze op hoogvuur bij elkaar te houden.
+              Hierdoor stomen ze zichzelf gaar en krijgen ze een zoete smaak. Ze
+              zijn klaar wanneer ze een bruine kleur hebben.
+              <button popovertarget="zoete-uien" popovertargetaction="hide">
+                sluit
+              </button>
+            </div>
+            <li>
+              Knoflook
+              <ul>
+                <li>Komijn</li>
+                <li>Kurkuma</li>
+                <li>Paprika poeder</li>
+              </ul>
+            </li>
+            <li>Gember (verse)</li>
+            <li>2 blikken gepelde tomaten</li>
+            <li>1 blik kikkererten</li>
+            <li>Groene linzen bijvoegen (todo: eige sectie geven)</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Op het laatst</h3>
+          <ul>
+            <li>Koriander</li>
+            <li>Yoghurt</li>
+            <li>Mango chutney</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+    <section>
+      <h2>Kurkuma rijst</h2>
+      <button
+        popovertarget="boodschap-kurkuma-rijst"
+        popovertargetaction="toggle"
+      >
+        Boodschappenlijstje
+      </button>
+      <div id="boodschap-kurkuma-rijst" popover>
+        <form><input type="checkbox" />Jasmijn rijst</form>
+        <form><input type="checkbox" />Boter</form>
+        <form><input type="checkbox" />Olijfolie</form>
+        <form><input type="checkbox" />Knoflook</form>
+        <form><input type="checkbox" />Ui</form>
+        <form><input type="checkbox" />Gember</form>
+        <form><input type="checkbox" />Groente bouilion</form>
+        <form><input type="checkbox" />Laurierblad</form>
+        <form><input type="checkbox" />Tijm</form>
+        <h4>Kruiden</h4>
+        <form><input type="checkbox" />Kurkuma</form>
+        <button
+          popovertarget="boodschap-kurkuma-rijst"
+          popovertargetaction="hide"
+        >
+          sluit
+        </button>
       </div>
-      <div>
-        <h3>Op het laatst</h3>
-        <ul>
-          <li>Koriander</li>
-          <li>Yoghurt</li>
-          <li>Mango chutney</li>
-        </ul>
-      </div>
+      <article></article>
     </section>
   </body>
 </html>
