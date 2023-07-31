@@ -39,6 +39,18 @@
       [popover] {
         max-width: 60ch;
       }
+      [popover] div {
+        display: flex;
+        align-items: center;
+      }
+      @media (pointer: coarse) {
+        input[type="checkbox"] {
+          width: 30px;
+          height: 30px;
+          border-width: 2px;
+          border-color: red;
+        }
+      }
     </style>
     <h1>Recepten</h1>
     <section>
@@ -47,16 +59,16 @@
         Boodschappenlijstje
       </button>
       <div id="boodschap-pompoen" popover>
-        <form><input type="checkbox" />2 uien</form>
-        <form><input type="checkbox" />2 uien</form>
-        <form><input type="checkbox" />1kg flespompoen</form>
-        <form><input type="checkbox" />1 blik kikkererten</form>
+        <div><input type="checkbox" />2 uien</div>
+        <div><input type="checkbox" />2 uien</div>
+        <div><input type="checkbox" />1kg flespompoen</div>
+        <div><input type="checkbox" />1 blik kikkererten</div>
         <h4>Kruiden</h4>
-        <form><input type="checkbox" />Chili vlokken</form>
-        <form><input type="checkbox" />Kurkuma</form>
-        <form><input type="checkbox" />Komijn</form>
-        <form><input type="checkbox" />Kaneel</form>
-        <form><input type="checkbox" />Paprika poeder</form>
+        <div><input type="checkbox" />Chili vlokken</div>
+        <div><input type="checkbox" />Kurkuma</div>
+        <div><input type="checkbox" />Komijn</div>
+        <div><input type="checkbox" />Kaneel</div>
+        <div><input type="checkbox" />Paprika poeder</div>
         <button popovertarget="boodschap-pompoen" popovertargetaction="hide">
           sluit
         </button>
@@ -140,17 +152,17 @@
         Boodschappenlijstje
       </button>
       <div id="boodschap-kurkuma-rijst" popover>
-        <form><input type="checkbox" />Jasmijn rijst</form>
-        <form><input type="checkbox" />Boter</form>
-        <form><input type="checkbox" />Olijfolie</form>
-        <form><input type="checkbox" />Knoflook</form>
-        <form><input type="checkbox" />Ui</form>
-        <form><input type="checkbox" />Gember</form>
-        <form><input type="checkbox" />Groente bouilion</form>
-        <form><input type="checkbox" />Laurierblad</form>
-        <form><input type="checkbox" />Tijm</form>
+        <div><input type="checkbox" />Jasmijn rijst</div>
+        <div><input type="checkbox" />Boter</div>
+        <div><input type="checkbox" />Olijfolie</div>
+        <div><input type="checkbox" />Knoflook</div>
+        <div><input type="checkbox" />Ui</div>
+        <div><input type="checkbox" />Gember</div>
+        <div><input type="checkbox" />Groente bouilion</div>
+        <div><input type="checkbox" />Laurierblad</div>
+        <div><input type="checkbox" />Tijm</div>
         <h4>Kruiden</h4>
-        <form><input type="checkbox" />Kurkuma</form>
+        <div><input type="checkbox" />Kurkuma</div>
         <button
           popovertarget="boodschap-kurkuma-rijst"
           popovertargetaction="hide"
