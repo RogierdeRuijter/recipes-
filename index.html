@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <style>/* This is to prevent a content shift before the polyfill loads */
+  @supports not selector([popover]:popover-open) {
+    [popover] {
+      /* Overwrite dialog positon absolute */
+      position: static;
+    }
+    [popover]:not([open]) {
+      display: none;
+    }
+  }
+    </style>
+    <script src="popover-api-fallback.js" defer></script>
+    <title>Recepten</title>
+  </head>
+  <body>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        --hue: 160;
+        background-color: oklch(0.9 0.02 var(--hue));
+        color-scheme: light dark;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        html {
+          background-color: oklch(0.15 0.1 var(--hue));
+          color: oklch(0.9 0.05 var(--hue));
+        }
+        h1,
+        h2,
+        h3 {
+          font-weight: 400;
+        }
+      }
+      section > article {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding-inline-start: 1rem;
+      }
+      [popover] {
+        max-width: 60ch;
+      }
+      [popover] div {
+        display: flex;
+        align-items: center;
+      }
+      @media (pointer: coarse) {
+        input[type="checkbox"] {
+          width: 30px;
+          height: 30px;
+          border-width: 2px;
+          border-color: red;
+        }
+      }
+    </style>
+    <h1>Recepten</h1>
+    <section>
+      <h2>Fles pompoen curry</h2>
+      <button popovertarget="boodschap-pompoen" popovertargetaction="toggle">
+        Boodschappenlijstje
+      </button>
+      <div id="boodschap-pompoen" popover>
+        <div><input type="checkbox" />2 uien</div>
+        <div><input type="checkbox" />2 uien</div>
+        <div><input type="checkbox" />1kg flespompoen</div>
+        <div><input type="checkbox" />1 blik kikkererten</div>
+        <h4>Kruiden</h4>
+        <div><input type="checkbox" />Chili vlokken</div>
+        <div><input type="checkbox" />Kurkuma</div>
+        <div><input type="checkbox" />Komijn</div>
+        <div><input type="checkbox" />Kaneel</div>
+        <div><input type="checkbox" />Paprika poeder</div>
+        <button popovertarget="boodschap-pompoen" popovertargetaction="hide">
+          sluit
+        </button>
+      </div>
+      <article>
+        <div>
+          <h3>In de oven</h3>
+          <button popovertarget="pompoen-snijden" popovertargetaction="toggle">
+            Hoe flespompoen snijden
+          </button>
+          <p id="pompoen-snijden" popover>
+            Snij de flespompoen in kleine stukje. Flespompoen is lastig te
+            snijden, snij die eerst in grote stukken en ga daarna door om het in
+            kleine blokje van een half finger kootje te snijden. Schillen hoeft
+            niet.
+            <button popovertarget="pompoen-snijden" popovertargetaction="hide">
+              sluit
+            </button>
+          </p>
+          <ul>
+            <li>
+              Flespompoen
+              <ul>
+                <li>Chili vlokken</li>
+                <li>Kurkumma</li>
+                <li>Komijn</li>
+                <li>Olie</li>
+                <li>Kaneel (als je haar voelt)</li>
+                <li>30 min 180 graden</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3>In de pan</h3>
+          <ul>
+            <li>
+              2 uien (normaal) zoet bakken
+              <button popovertarget="zoete-uien" popovertargetaction="toggle">
+                Hoe zoet bakken?
+              </button>
+            </li>
+            <div id="zoete-uien" popover>
+              Uien bak je zoet door ze op hoogvuur bij elkaar te houden.
+              Hierdoor stomen ze zichzelf gaar en krijgen ze een zoete smaak. Ze
+              zijn klaar wanneer ze een bruine kleur hebben.
+              <button popovertarget="zoete-uien" popovertargetaction="hide">
+                sluit
+              </button>
+            </div>
+            <li>
+              Knoflook
+              <ul>
+                <li>Komijn</li>
+                <li>Kurkuma</li>
+                <li>Paprika poeder</li>
+              </ul>
+            </li>
+            <li>Gember (verse)</li>
+            <li>2 blikken gepelde tomaten</li>
+            <li>1 blik kikkererten</li>
+            <li>Groene linzen bijvoegen (todo: eige sectie geven)</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Op het laatst</h3>
+          <ul>
+            <li>Koriander</li>
+            <li>Yoghurt</li>
+            <li>Mango chutney</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+    <section>
+      <h2>Kurkuma rijst</h2>
+      <button
+        popovertarget="boodschap-kurkuma-rijst"
+        popovertargetaction="toggle"
+      >
+        Boodschappenlijstje
+      </button>
+      <div id="boodschap-kurkuma-rijst" popover>
+        <div><input type="checkbox" />Jasmijn rijst</div>
+        <div><input type="checkbox" />Boter</div>
+        <div><input type="checkbox" />Olijfolie</div>
+        <div><input type="checkbox" />Knoflook</div>
+        <div><input type="checkbox" />Ui</div>
+        <div><input type="checkbox" />Gember</div>
+        <div><input type="checkbox" />Groente bouilion</div>
+        <div><input type="checkbox" />Laurierblad</div>
+        <div><input type="checkbox" />Tijm</div>
+        <h4>Kruiden</h4>
+        <div><input type="checkbox" />Kurkuma</div>
+        <button
+          popovertarget="boodschap-kurkuma-rijst"
+          popovertargetaction="hide"
+        >
+          sluit
+        </button>
+      </div>
+      <article></article>
+    </section>
+  </body>
+</html>
