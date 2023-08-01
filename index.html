@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <style>
-      @import "./popover-api-fallback.css";
+      @import "node_modules/fallback-popover-api/popover-api-fallback.css";
     </style>
-    <script type="module" src="./popover-api-fallback.js" defer></script>
+    <script
+      type="module"
+      src="node_modules/fallback-popover-api/popover-api-fallback.js"
+      defer
+    ></script>
     <title>Recepten</title>
   </head>
   <body>
@@ -34,10 +38,17 @@
           font-weight: 400;
         }
       }
+
       section > article {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-auto-flow: column;
         padding-inline-start: 1rem;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+      }
+      section > article > * {
+        min-width: 300px;
+        scroll-snap-align: center;
       }
       [popover] {
         max-width: 60ch;
@@ -53,6 +64,13 @@
           border-width: 2px;
           border-color: red;
         }
+      }
+      img {
+        --path: circle();
+        clip-path: var(--path);
+        shape-outside: var(--path);
+        width: 200px;
+        float: left;
       }
     </style>
     <h1>Recepten</h1>
@@ -173,6 +191,29 @@
           sluit
         </button>
       </div>
+      <picture>
+        <source
+          type="image/avif"
+          srcset="
+            assets/kurkuma-rijst_400px.avif   400w,
+            assets/kurkuma-rijst_800px.avif   800w,
+            assets/kurkuma-rijst_1200px.avif 1200w
+          "
+        />
+        <source
+          type="image/jpeg"
+          srcset="
+            assets/kurkuma-rijst_400px.jpg   400w,
+            assets/kurkuma-rijst_800px.jpg   800w,
+            assets/kurkuma-rijst_1200px.jpg 1200w
+          "
+        />
+        <img
+          src="assets/kurkuma-rijst_800px.jpg"
+          width="350"
+          alt="Fallback Image"
+        />
+      </picture>
       <article>
         <div>
           <h3>Keuken benodigdheden</h3>
@@ -228,8 +269,14 @@
             </li>
           </ol>
         </div>
-        <h4>Laat dit 17 minuten koken met een deksel er op</h4>
-        <h4>Als het klaar is gelijk serveren</h4>
+        <div>
+          <h3>Wachten...</h3>
+          <p>Laat dit 17 minuten koken met een deksel er op</p>
+        </div>
+        <div>
+          <h3>Serveer tips</h3>
+          <p>Als het klaar is gelijk serveren</p>
+        </div>
       </article>
     </section>
   </body>

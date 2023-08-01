@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "convert-originals": "node ../convert-png-to-avif-and-jpg recepten"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,9 @@
   },
   "homepage": "https://github.com/RogierdeRuijter/recipes-#readme",
   "dependencies": {
+    "fallback-popover-api": "^1.0.0",
+  },
+  "devDependencies": {
     "vite": "^4.4.7"
   }
 }
