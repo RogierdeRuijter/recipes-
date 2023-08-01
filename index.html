@@ -43,10 +43,17 @@
           font-weight: 400;
         }
       }
+
       section > article {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-auto-flow: column;
         padding-inline-start: 1rem;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+      }
+      section > article > * {
+        min-width: 300px;
+        scroll-snap-align: center;
       }
       [popover] {
         max-width: 60ch;
@@ -62,6 +69,13 @@
           border-width: 2px;
           border-color: red;
         }
+      }
+      img {
+        --path: circle();
+        clip-path: var(--path);
+        shape-outside: var(--path);
+        width: 200px;
+        float: left;
       }
     </style>
     <h1>Recepten</h1>
@@ -182,6 +196,21 @@
           sluit
         </button>
       </div>
+      <picture>
+        <source
+          type="image/avif"
+          srcset="/recipes-/assets/kurkuma-rijst_400px-21671e8b.avif 400w, /recipes-/assets/kurkuma-rijst_800px-d83828de.avif 800w, /recipes-/assets/kurkuma-rijst_1200px-08f73b27.avif 1200w"
+        />
+        <source
+          type="image/jpeg"
+          srcset="/recipes-/assets/kurkuma-rijst_400px-9575ebcd.jpg 400w, /recipes-/assets/kurkuma-rijst_800px-2ce89790.jpg 800w, /recipes-/assets/kurkuma-rijst_1200px-7e3eb936.jpg 1200w"
+        />
+        <img
+          src="/recipes-/assets/kurkuma-rijst_800px-2ce89790.jpg"
+          width="350"
+          alt="Fallback Image"
+        />
+      </picture>
       <article>
         <div>
           <h3>Keuken benodigdheden</h3>
@@ -237,8 +266,98 @@
             </li>
           </ol>
         </div>
-        <h4>Laat dit 17 minuten koken met een deksel er op</h4>
-        <h4>Als het klaar is gelijk serveren</h4>
+        <div>
+          <h3>Wachten...</h3>
+          <p>Laat dit 17 minuten koken met een deksel er op</p>
+        </div>
+        <div>
+          <h3>Serveer tips</h3>
+          <p>Als het klaar is gelijk serveren</p>
+        </div>
+      </article>
+    </section>
+    <section>
+      <h2>Appelsause</h2>
+      <button popovertarget="appelsause" popovertargetaction="toggle">
+        Boodschappenlijstje
+      </button>
+      <div id="appelsause" popover>
+        <div><input type="checkbox" />1kg appels</div>
+        <div><input type="checkbox" />Kaneel</div>
+        <button popovertarget="appelsause" popovertargetaction="hide">
+          sluit
+        </button>
+      </div>
+      <picture>
+        <source
+          type="image/avif"
+          srcset="/recipes-/assets/appelsauce_400px-42e5be86.avif 400w, /recipes-/assets/appelsauce_800px-719cb246.avif 800w, /recipes-/assets/appelsauce_1200px-3b153f34.avif 1200w"
+        />
+        <source
+          type="image/jpeg"
+          srcset="/recipes-/assets/appelsauce_400px-35498484.jpg 400w, /recipes-/assets/appelsauce_800px-e754e362.jpg 800w, /recipes-/assets/appelsauce_1200px-6177ec07.jpg 1200w"
+        />
+        <img
+          src="/recipes-/assets/appelsauce_800px-e754e362.jpg"
+          width="350"
+          alt="Fallback Image"
+        />
+      </picture>
+      <article>
+        <div>
+          <h3>Benodigdheden</h3>
+          <ul>
+            <li>Pan</li>
+            <li>Deksel voor pan</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Voorbereiden</h3>
+          <ol>
+            <li>
+              Snij elke appel is 4 stukken zodat alleen het binnenste deel
+              overblijft
+            </li>
+            <li>
+              Snij de stukken verder in kleiner stukken van ongeveer 3cm. Iets
+              meer dan een vingerkootje
+            </li>
+          </ol>
+        </div>
+        <div>
+          <h3>Eerste kook sessie</h3>
+          <ol>
+            <li>Doe de appels in de pan</li>
+            <li>Voeg een klein beetje water toe, niet te veel</li>
+            <li>Laat dit koken voor 10 min</li>
+          </ol>
+        </div>
+        <div>
+          <h3>Husselen</h3>
+          <ul>
+            <li>Schep de appels om met een spatel</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Tweede kook sessie</h3>
+          <ul>
+            <li>Kook voor nog een keer 15min</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Pureren</h3>
+          <ul>
+            <li>Voeg kaneel toe</li>
+            <li>Pureer de appels met een staaf mixer</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Als laatste</h3>
+          <ul>
+            <li>Laat die afkoelen</li>
+            <li>Bewaar in de koelkast</li>
+          </ul>
+        </div>
       </article>
     </section>
   </body>
