@@ -2,7 +2,6 @@
   "name": "recepten",
   "version": "1.0.0",
   "description": "",
-  "main": "popover-api-fallback.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -20,9 +19,9 @@
   },
   "homepage": "https://github.com/RogierdeRuijter/recipes-#readme",
   "dependencies": {
-    "fallback-popover-api": "^1.0.0",
+    "fallback-popover-api": "^1.0.0"
   },
   "devDependencies": {
-    "vite": "^4.4.7"
+    "vite": "^4.4.8"
   }
 }
