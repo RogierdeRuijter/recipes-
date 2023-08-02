@@ -83,7 +83,7 @@
         clip-path: var(--path);
         width: 200px;
       }
-      li {
+      li:not(:is(ul, ol) > li > * > li) {
         margin-block-end: 0.2em;
       }
       h2 {
