@@ -47,13 +47,16 @@
       section > article {
         display: grid;
         grid-auto-flow: column;
-        padding-inline-start: 1rem;
         overflow-x: auto;
         scroll-snap-type: x mandatory;
       }
       section > article > * {
         min-width: 300px;
         scroll-snap-align: center;
+        padding-inline-end: 0.5rem;
+      }
+      section > article > *:first-of-type {
+        min-width: 400px;
       }
       [popover] {
         max-width: 60ch;
@@ -70,12 +73,18 @@
           border-color: red;
         }
       }
-      img {
+      picture {
         --path: circle();
-        clip-path: var(--path);
         shape-outside: var(--path);
-        width: 200px;
         float: left;
+        margin-inline-end: 1.5rem;
+      }
+      img {
+        clip-path: var(--path);
+        width: 200px;
+      }
+      li {
+        margin-block-end: 0.2em;
       }
     </style>
     <h1>Recepten</h1>
@@ -197,22 +206,22 @@
         </button>
       </div>
       <article>
-        <picture>
-          <source
-            type="image/avif"
-            srcset="/recipes-/assets/kurkuma-rijst_400px-21671e8b.avif 400w, /recipes-/assets/kurkuma-rijst_800px-d83828de.avif 800w, /recipes-/assets/kurkuma-rijst_1200px-08f73b27.avif 1200w"
-          />
-          <source
-            type="image/jpeg"
-            srcset="/recipes-/assets/kurkuma-rijst_400px-9575ebcd.jpg 400w, /recipes-/assets/kurkuma-rijst_800px-2ce89790.jpg 800w, /recipes-/assets/kurkuma-rijst_1200px-7e3eb936.jpg 1200w"
-          />
-          <img
-            src="/recipes-/assets/kurkuma-rijst_800px-2ce89790.jpg"
-            width="350"
-            alt="Fallback Image"
-          />
-        </picture>
         <div>
+          <picture>
+            <source
+              type="image/avif"
+              srcset="/recipes-/assets/kurkuma-rijst_400px-21671e8b.avif 400w, /recipes-/assets/kurkuma-rijst_800px-d83828de.avif 800w, /recipes-/assets/kurkuma-rijst_1200px-08f73b27.avif 1200w"
+            />
+            <source
+              type="image/jpeg"
+              srcset="/recipes-/assets/kurkuma-rijst_400px-9575ebcd.jpg 400w, /recipes-/assets/kurkuma-rijst_800px-2ce89790.jpg 800w, /recipes-/assets/kurkuma-rijst_1200px-7e3eb936.jpg 1200w"
+            />
+            <img
+              src="/recipes-/assets/kurkuma-rijst_800px-2ce89790.jpg"
+              width="350"
+              alt="Fallback Image"
+            />
+          </picture>
           <h3>Keuken spullen</h3>
           <ul>
             <li>Koekenpan</li>
@@ -290,22 +299,22 @@
         </button>
       </div>
       <article>
-        <picture>
-          <source
-            type="image/avif"
-            srcset="/recipes-/assets/appelsauce_400px-42e5be86.avif 400w, /recipes-/assets/appelsauce_800px-719cb246.avif 800w, /recipes-/assets/appelsauce_1200px-3b153f34.avif 1200w"
-          />
-          <source
-            type="image/jpeg"
-            srcset="/recipes-/assets/appelsauce_400px-35498484.jpg 400w, /recipes-/assets/appelsauce_800px-e754e362.jpg 800w, /recipes-/assets/appelsauce_1200px-6177ec07.jpg 1200w"
-          />
-          <img
-            src="/recipes-/assets/appelsauce_800px-e754e362.jpg"
-            width="350"
-            alt="Fallback Image"
-          />
-        </picture>
         <div>
+          <picture>
+            <source
+              type="image/avif"
+              srcset="/recipes-/assets/appelsauce_havermout_400px-b72b579d.avif 400w, /recipes-/assets/appelsauce_havermout_800px-c2f82828.avif 800w, /recipes-/assets/appelsauce_havermout_1200px-921ab742.avif 1200w"
+            />
+            <source
+              type="image/jpeg"
+              srcset="/recipes-/assets/appelsauce_havermout_400px-33ad8f90.jpg 400w, /recipes-/assets/appelsauce_havermout_800px-5137ee23.jpg 800w, /recipes-/assets/appelsauce_havermout_1200px-6de6961d.jpg 1200w"
+            />
+            <img
+              src="/recipes-/assets/appelsauce_havermout_800px-5137ee23.jpg"
+              width="350"
+              alt="Fallback Image"
+            />
+          </picture>
           <h3>Keuken spullen</h3>
           <ul>
             <li>Pan</li>
