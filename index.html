@@ -55,6 +55,11 @@
         scroll-snap-align: start;
         padding-inline-end: 0.5rem;
       }
+      @media (min-width: 600px) {
+        section > article > * {
+          scroll-snap-align: center;
+        }
+      }
       section > article > *:first-of-type {
         min-width: 400px;
       }
