@@ -42,13 +42,16 @@
       section > article {
         display: grid;
         grid-auto-flow: column;
-        padding-inline-start: 1rem;
         overflow-x: auto;
         scroll-snap-type: x mandatory;
       }
       section > article > * {
         min-width: 300px;
         scroll-snap-align: center;
+        padding-inline-end: 0.5rem;
+      }
+      section > article > *:first-of-type {
+        min-width: 400px;
       }
       [popover] {
         max-width: 60ch;
@@ -65,12 +68,18 @@
           border-color: red;
         }
       }
-      img {
+      picture {
         --path: circle();
-        clip-path: var(--path);
         shape-outside: var(--path);
-        width: 200px;
         float: left;
+        margin-inline-end: 1.5rem;
+      }
+      img {
+        clip-path: var(--path);
+        width: 200px;
+      }
+      li {
+        margin-block-end: 0.2em;
       }
     </style>
     <h1>Recepten</h1>
@@ -192,30 +201,30 @@
         </button>
       </div>
       <article>
-        <picture>
-          <source
-            type="image/avif"
-            srcset="
-              assets/kurkuma-rijst_400px.avif   400w,
-              assets/kurkuma-rijst_800px.avif   800w,
-              assets/kurkuma-rijst_1200px.avif 1200w
-            "
-          />
-          <source
-            type="image/jpeg"
-            srcset="
-              assets/kurkuma-rijst_400px.jpg   400w,
-              assets/kurkuma-rijst_800px.jpg   800w,
-              assets/kurkuma-rijst_1200px.jpg 1200w
-            "
-          />
-          <img
-            src="assets/kurkuma-rijst_800px.jpg"
-            width="350"
-            alt="Fallback Image"
-          />
-        </picture>
         <div>
+          <picture>
+            <source
+              type="image/avif"
+              srcset="
+                assets/kurkuma-rijst_400px.avif   400w,
+                assets/kurkuma-rijst_800px.avif   800w,
+                assets/kurkuma-rijst_1200px.avif 1200w
+              "
+            />
+            <source
+              type="image/jpeg"
+              srcset="
+                assets/kurkuma-rijst_400px.jpg   400w,
+                assets/kurkuma-rijst_800px.jpg   800w,
+                assets/kurkuma-rijst_1200px.jpg 1200w
+              "
+            />
+            <img
+              src="assets/kurkuma-rijst_800px.jpg"
+              width="350"
+              alt="Fallback Image"
+            />
+          </picture>
           <h3>Keuken spullen</h3>
           <ul>
             <li>Koekenpan</li>
@@ -293,30 +302,30 @@
         </button>
       </div>
       <article>
-        <picture>
-          <source
-            type="image/avif"
-            srcset="
-              assets/appelsauce_400px.avif   400w,
-              assets/appelsauce_800px.avif   800w,
-              assets/appelsauce_1200px.avif 1200w
-            "
-          />
-          <source
-            type="image/jpeg"
-            srcset="
-              assets/appelsauce_400px.jpg   400w,
-              assets/appelsauce_800px.jpg   800w,
-              assets/appelsauce_1200px.jpg 1200w
-            "
-          />
-          <img
-            src="assets/appelsauce_800px.jpg"
-            width="350"
-            alt="Fallback Image"
-          />
-        </picture>
         <div>
+          <picture>
+            <source
+              type="image/avif"
+              srcset="
+                assets/appelsauce_havermout_400px.avif   400w,
+                assets/appelsauce_havermout_800px.avif   800w,
+                assets/appelsauce_havermout_1200px.avif 1200w
+              "
+            />
+            <source
+              type="image/jpeg"
+              srcset="
+                assets/appelsauce_havermout_400px.jpg   400w,
+                assets/appelsauce_havermout_800px.jpg   800w,
+                assets/appelsauce_havermout_1200px.jpg 1200w
+              "
+            />
+            <img
+              src="assets/appelsauce_havermout_800px.jpg"
+              width="350"
+              alt="Fallback Image"
+            />
+          </picture>
           <h3>Keuken spullen</h3>
           <ul>
             <li>Pan</li>
